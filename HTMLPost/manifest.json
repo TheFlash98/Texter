@@ -1,0 +1,36 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "Text to Video",
+  "description": "Sends html to our webapp",
+  "version": "1.0",
+
+  "icons": {"16":"icon.png",
+            "48":"icon.png"},
+
+  "browser_action": {
+                    "default_icon": {                    // optional
+                                    "16": "icon.png",           // optional
+                                    "24": "icon.png",           // optional
+                                    "32": "icon.png"            // optional
+                                    },
+                    "default_title": "Yo",      // optional; shown in tooltip
+                    "default_popup": "popup.html"        // optional
+                    },
+
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "tabs", "https://*/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["\u003Call_urls\u003E"],
+      "js": ["jquery.min.js","content.js"]
+    }
+  ],
+
+
+  "author": "Darshan Tank"
+}
